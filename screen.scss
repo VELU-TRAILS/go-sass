@@ -1,0 +1,88 @@
+@import'mixins';
+$beautifulhue: #059dec;
+
+html {
+    font-size: 1em;
+    @include bp-babybear {
+        font-size: .8em;
+    }
+    @include bp-papabear {
+        font-size: 1.4em;
+    }
+    line-height: 1.35;
+  }
+  
+
+
+
+
+
+
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    color: $beautifulhue;
+}
+
+@import 'header';
+
+.btn-a {
+  display: inline-block;
+  padding: 15px;
+  margin-right: 10px;
+  border: 1px solid #059dec;
+  border-radius: 7px;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+@mixin verticalGradient($fromcolor, $tocolor) {
+    background-image: linear-gradient(to bottom, $fromcolor, $tocolor);
+    
+}
+
+
+
+
+
+
+
+
+
+.btn-b {
+    @extend .btn-a;
+    @include verticalGradient(white, lighten($beautifulhue,50%));
+}
+
+.box {
+    background-color: lightgray;
+    width: 200px;
+    height: 150px;
+}
+
+
+
+
+
+
+
+.group:before, .site-header nav ul:before, 
+.group:after, .site-header nav ul:after {
+  content: "";
+  display: table;
+}
+
+.group:after, .site-header nav ul:after {
+  clear: both;
+}
+
+.group, .site-header nav ul {
+  zoom: 1;
+}
+
